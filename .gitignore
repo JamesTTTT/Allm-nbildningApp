@@ -1,0 +1,39 @@
+# Dependency directories
+node_modules/
+
+# Expo (React Native) specific
+**/ios/Pods/
+**/android/app/build/
+**/android/.gradle/
+**/android/build/
+**/web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+**/.DS_Store
+*.env
+*.env.*
+!*.env.example
+
+# Express Backend specific
+/trivia-backend/node_modules/
+/trivia-backend/dist/
+/trivia-backend/.env
+/trivia-backend/*.log
+/trivia-backend/*.pid
+/trivia-backend/npm-debug.log*
+/trivia-backend/yarn-debug.log*
+/trivia-backend/yarn-error.log*
+
+# Editor directories and files
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+Thumbs.db
