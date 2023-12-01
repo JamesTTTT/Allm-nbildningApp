@@ -1,4 +1,17 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+const mongoURI =
+  "mongodb+srv://JamesTT:triviapass123@trivia-db.lk5zu6k.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
 const app = express();
 const port = 3000;
 
