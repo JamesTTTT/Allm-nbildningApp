@@ -1,8 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const mongoURI =
-  "mongodb+srv://JamesTT:triviapass123@trivia-db.lk5zu6k.mongodb.net/?retryWrites=true&w=majority";
+const mongoURI = process.env.MONGO_URI;
 
 mongoose
   .connect(mongoURI, {
@@ -15,8 +15,8 @@ mongoose
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
 app.listen(port, () => {
