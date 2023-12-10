@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     const newUser = new User({
-      fullName: req.body.fullName,
+      username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
     });
