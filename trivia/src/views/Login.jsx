@@ -2,28 +2,46 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { CustomButton, CustomInput } from '../components';
 // import { LoginStyles } from '../styles';
-import { LoginStyle, LoginTitle } from "../styles/Login";
+import { LoginStyle, LoginTitle, AuthIconContainer, FacebookInstagramContainer, googleContainer, TopSection, InnerTopSection, InputContainer, TopNav, ForgotPasswordStyle } from "../styles/Login";
+import AuthIconButton from "../components/AuthIconButton";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
 
   const handleLogin = () => {};
+  const Stack = createStackNavigator();
 
   return (
     <View style={ LoginStyle }>
-      <View style={{ flex: 1, alignItems: 'cenmter', width: '100%' }}>
-        <Text style={ LoginTitle }>Log In</Text>
-        <View style={{ gap: 16 }}>
-          <CustomInput inputValue={emailValue} setInputValue={setEmailValue} type='Email' />
-          <CustomInput inputValue={passwordValue} setInputValue={setPasswordValue} type='Password' />
+      <View style={ TopSection }>
+        <View style={ TopNav }>
+          <Text style={{ width: 50 }}>&#10005;</Text>
+          <Text style={ LoginTitle }>Log In</Text>
+          <Pressable style={{ width: 50 }} onPress={() => {navigation.navigate('Registration')}}>
+            <Text style={{ textAlign: 'right', color: '#7E5EFF' }}>Sign up</Text>
+          </Pressable>
+        </View>
+        <View style={ InnerTopSection }>
+          <View style={ InputContainer }>
+            <CustomInput inputValue={emailValue} setInputValue={setEmailValue} type='Email' />
+            <CustomInput inputValue={passwordValue} setInputValue={setPasswordValue} type='Password' />            
+          </View>
+          <View style={ AuthIconContainer }>
+            <AuthIconButton icon='google' />
+            <AuthIconButton icon='facebook' />
+            <AuthIconButton icon='apple' />
+          </View>
         </View>
       </View>
       <View style={{ width: '100%' }}>
         <Pressable onPress={handleLogin}>
           <CustomButton buttonText='Log In' />
         </Pressable>
-        <Text style={{ fontSize: 16, textAlign: 'center', marginVertical: 16, color: '#7E5EFF', fontWeight: '600' }}>Forgot Your Password?</Text>
+        <Pressable>
+          <Text style={ ForgotPasswordStyle }>Forgot Your Password?</Text>
+        </Pressable>
       </View>
     </View>
   );
