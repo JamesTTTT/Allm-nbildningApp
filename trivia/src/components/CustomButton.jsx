@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
+// import { ButtonStyles } from '../styles';
+import { ButtonStyle, ButtonText } from '../styles/Buttons';
 
-const CustomButton = () => {
+const CustomButton = ({ buttonText }) => {
   return (
-    <View>
-      <Text>CustomButton</Text>
-    </View>
+    <Pressable style={ ButtonStyle }>
+      <Text style={ ButtonText }>{ buttonText }</Text>
+    </Pressable>
   );
 };
 
