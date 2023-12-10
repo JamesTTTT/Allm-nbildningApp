@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
+const questionRoutes = require("./routes/question");
 require("dotenv").config();
 
 const mongoURI = process.env.MONGO_URI;
@@ -29,3 +30,4 @@ app.listen(port, () => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/question", questionRoutes);
