@@ -10,7 +10,7 @@ const CustomInput = ({ type, inputValue, setInputValue }) => {
   const handlePressShow = () => setShow(!show);
 
   return (
-    <View style={{ position: 'relative' }}>
+    <View style={{ position: 'relative', flexDirection: 'row' }}>
       <TextInput secureTextEntry={!show && type.toLowerCase() === 'password'} value={ inputValue } onChange={e => setInputValue(e.target.value)} style={ InputStyle } type={ type.toLowerCase() } placeholder={ type } />
       { type.toLowerCase() === 'password' && (
         <Pressable onPress={handlePressShow} style={{ position: 'absolute', top: 4, right: 0 }}>

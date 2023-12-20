@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { Home, Profile, Login, Registration } from "./src/views";
+import { Home, Profile, Login, Registration, HomeTabs } from "./src/views";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,12 +10,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Registration /> */}
-      {/* <Login /> */}
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Registration" component={Registration} />
+          <Stack.Screen name="HomeTabs" component={HomeTabs} />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />
