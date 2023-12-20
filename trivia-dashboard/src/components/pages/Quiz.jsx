@@ -1,9 +1,9 @@
 import React from "react";
-
+import { addQuestion } from "../";
 const Quiz = () => {
   return (
-    <div className="flex justify-center w-full text-blue-400 text-4xl">
-      Quiz
+    <div>
+      <addQuestion />
     </div>
   );
 };

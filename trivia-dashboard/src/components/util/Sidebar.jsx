@@ -26,25 +26,25 @@ const SidebarItems = () => {
   });
 };
 
-const compactSidebarItem = () => {
-  return links.map((item) => {
-    return (
-      <NavLink
-        key={item.title}
-        to={`/${item.title}`}
-        className={({ isActive }) => (isActive ? activeLink : normalLink)}
-      >
-        <div
-          className="
-          flex items-center p-2 font-normal text-2xl py-3
-         hover:bg-sidebarHover rounded-xl transition-colors"
-        >
-          <span className="px-3">{item.icon}</span>
-        </div>
-      </NavLink>
-    );
-  });
-};
+// const compactSidebarItem = () => {
+//   return links.map((item) => {
+//     return (
+//       <NavLink
+//         key={item.title}
+//         to={`/${item.title}`}
+//         className={({ isActive }) => (isActive ? activeLink : normalLink)}
+//       >
+//         <div
+//           className="
+//           flex items-center p-2 font-normal text-2xl py-3
+//          hover:bg-sidebarHover rounded-xl transition-colors"
+//         >
+//           <span className="px-3">{item.icon}</span>
+//         </div>
+//       </NavLink>
+//     );
+//   });
+// };
 
 const Sidebar = () => {
   const [width, setwidth] = useState(window.innerWidth);
@@ -59,18 +59,18 @@ const Sidebar = () => {
     };
   }, []);
 
-  if (width < 1536) {
-    return (
-      <div className="relative mr-4 w-20 z-10">
-        <nav
-          className="
-            h-screen overflow-auto flex flex-col bg-white p-3 fixed"
-        >
-          {compactSidebarItem()}
-        </nav>
-      </div>
-    );
-  }
+  // if (width < 1536) {
+  //   return (
+  //     <div className="relative mr-4 w-20 z-10">
+  //       <nav
+  //         className="
+  //           h-screen overflow-auto flex flex-col bg-white p-3 fixed"
+  //       >
+  //         {compactSidebarItem()}
+  //       </nav>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="relative min-w-80 w-80 mr-4 z-10">
