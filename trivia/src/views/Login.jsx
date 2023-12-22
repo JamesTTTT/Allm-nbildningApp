@@ -37,9 +37,7 @@ const Login = ({ navigation }) => {
         </View>
       </View>
       <View style={{ width: '100%' }}>
-        <Pressable onPress={handleLogin}>
-          <CustomButton buttonText='Log In' />
-        </Pressable>
+        <CustomButton buttonText='Log In' press={handleLogin} />
         <Pressable>
           <Text style={ ForgotPasswordStyle }>Forgot Your Password?</Text>
         </Pressable>

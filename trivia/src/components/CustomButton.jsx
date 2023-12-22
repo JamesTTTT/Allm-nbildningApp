@@ -3,9 +3,9 @@ import React from "react";
 // import { ButtonStyles } from '../styles';
 import { ButtonStyle, ButtonText } from '../styles/Buttons';
 
-const CustomButton = ({ buttonText }) => {
+const CustomButton = ({ buttonText, press }) => {
   return (
-    <Pressable style={ ButtonStyle }>
+    <Pressable onPress={press} style={ ButtonStyle }>
       <Text style={ ButtonText }>{ buttonText }</Text>
     </Pressable>
   );
