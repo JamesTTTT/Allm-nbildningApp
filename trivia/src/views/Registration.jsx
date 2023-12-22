@@ -26,9 +26,7 @@ const Registration = ({ navigation }) => {
         </View>        
       </View>
       <View style={{ width: '100%' }}>
-        <Pressable onPress={handleRegistration}>
-          <CustomButton buttonText='Sign Up' />
-        </Pressable>
+        <CustomButton buttonText='Sign Up' press={handleRegistration} />
         <Text style={ ForgotPassword }>Forgot Your Password?</Text>
       </View>
     </View>
